@@ -11,11 +11,11 @@
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages -->
+                        <!-- will be used to show any messages
                         @if (Session::has('message'))
                             <div class="alert alert-info">{{ Session::get('message') }}</div>
                         @endif
-
+                        -->
                         <form method="post" action="{{action('HolidayHousesController@update', $id)}}">
                             <div class="form-group row">
                                 {{csrf_field()}}
