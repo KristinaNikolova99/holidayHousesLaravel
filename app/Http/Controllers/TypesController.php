@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Type;
 use Illuminate\Http\Request;
 
 class TypesController extends Controller
@@ -13,7 +14,9 @@ class TypesController extends Controller
      */
     public function index()
     {
-        //
+                $types = Type::all();
+
+        return view('Types.index', compact('types'));
     }
 
     /**
@@ -23,7 +26,7 @@ class TypesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Types.create');
     }
 
     /**
@@ -34,16 +37,20 @@ class TypesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+                \App\Type::create([
+          'type' => $request->get('type'),
+        ]);
+
+        return redirect('/types')->with('success', 'Type has been added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Type $type
     {
         //
     }
@@ -51,34 +58,48 @@ class TypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+         $type = Type::find($id);
+
+        return view('Types.edit', compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([
+        'type'=>'required',
+      ]);
+
+      $type = Type::find($id);
+      $type->type = $request->get('type');
+
+      $type->save();
+
+      return redirect('/types')->with('success', 'Type has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $type = Type::find($id);
+     $type->delete();
+
+     return redirect('/types')->with('success', 'Type has been deleted Successfully');
     }
 }

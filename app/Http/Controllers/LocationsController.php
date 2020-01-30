@@ -16,7 +16,7 @@ class LocationsController extends Controller
     {
                 $locations = Location::all();
 
-        return view('locations.index', compact('locations'));
+        return view('Locations.index', compact('locations'));
     }
 
     /**
@@ -65,7 +65,7 @@ class LocationsController extends Controller
     {
          $location = Location::find($id);
 
-        return view('locations.edit', compact('location'));
+        return view('Locations.edit', compact('location'));
     }
 
     /**
