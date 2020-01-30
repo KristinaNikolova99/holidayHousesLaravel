@@ -32,11 +32,11 @@
                             @foreach($holidayhouses as $key => $value)
                                 <tr>
                                     <td>{{ $value->id }}</td>
-                                    <td>{{ $value->Name }}</td>
-                                    <td>{{ $value->LocationID }}</td>
-                                    <td>{{ $value->NumberOfRooms }}</td>
-                                    <td>{{ $value->NumberOfBeds }}</td>
-                                    <td>{{ $value->TypeID }}</td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>{{ $value->location_id }}</td>
+                                    <td>{{ $value->numberOfRooms }}</td>
+                                    <td>{{ $value->numberOfBeds }}</td>
+                                    <td>{{ $value->type_id }}</td>
 
                                    <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td>
                                     <!-- we will also add show, edit, and delete buttons -->

@@ -29,7 +29,7 @@
                             @foreach($locations as $key => $value)
                                 <tr>
                                     <td>{{ $value->id }}</td>
-                                    <td>{{ $value->Location }}</td>
+                                    <td>{{ $value->location }}</td>
 
                                    <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td>
                                     <!-- we will also add show, edit, and delete buttons -->
