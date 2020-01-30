@@ -13,7 +13,7 @@ class CreateHolidayHousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('HolidayHouses', function (Blueprint $table) {
+        Schema::create('holiday_houses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->String('name');
 

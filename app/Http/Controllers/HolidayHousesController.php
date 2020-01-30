@@ -13,7 +13,7 @@ class HolidayHousesController extends Controller
      */
     public function index()
     {
-                 $holidayhouses = HolidayHouses::all();
+                 $holidayhouses = HolidayHouse::all();
 
         return view('HolidayHouses.index',  compact('holidayhouses'));
     }
