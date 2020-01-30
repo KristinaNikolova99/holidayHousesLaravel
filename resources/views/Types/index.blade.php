@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Types Holiday Houses
+                        Types
                         <a href="{{ URL::to('types/create') }}" class="pull-right">Add Type</a>
                     </div>
 
@@ -31,15 +31,21 @@
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->type }}</td>
 
-                                   <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td>
-                                    <!-- we will also add show, edit, and delete buttons -->
+                                   <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td> -->
+                                    <!--we will also add show, edit, and delete buttons -->
                                     <td>
 
-                                        <form action="{{action('TypesController@destroy', $value->id )}}" method="post">
+                                       <!-- show the subjects (uses the show method found at GET /admin/subjects/{id} -->
+                                       <!--<a class="btn btn-small btn-success" href="{{ URL::to('locations' . $value->id) }}">Show Location</a> -->
+                                       <!-- edit this subject (uses the edit method found at GET /admin/subjects/{id}/edit -->
+                                       <a class="btn btn-small btn-info" href="{{ URL::to('types' . '/' . $value->id . '/edit') }}">Edit Type</a>
+                                       <form action="{{action('TypesController@destroy', $value->id )}}" method="post">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                            <button class="btn btn-danger" type="submit">Delete Type</button>
                                         </form>
+
+                                        
 
                                     </td>
                                 </tr>
