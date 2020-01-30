@@ -11,34 +11,35 @@
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages
+                        <!-- will be used to show any messages 
                         @if (Session::has('message'))
                             <div class="alert alert-info">{{ Session::get('message') }}</div>
                         @endif
                         -->
-                        <form method="post" action="{{action('HolidayHousesController@update', $id)}}">
+
+                        <form method="post" action="{{action('HolidayHousesController@update', $holidayhouse->id)}}">
                             <div class="form-group row">
                                 {{csrf_field()}}
                                 <input name="_method" type="hidden" value="PATCH">
                                 <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="name" name="name" value="{{$subject->name}}">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" value={{ $holidayhouse->name }} />
                                 </div>
-                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Location</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="location_id" name="location_id" value="{{$subject->location_id}}">
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">LocationID</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="location_id" value={{ $holidayhouse->location_id }} />
                                 </div>
                                 <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Number of rooms</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="numberOfRooms" name="numberOfRooms" value="{{$subject->numberOfRooms}}">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="numberOfRooms" value={{ $holidayhouse->numberOfRooms }} />
                                 </div>
                                 <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Number of beds</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="numberOfBeds" name="numberOfBeds" value="{{$subject->numberOfBeds}}">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="numberOfBeds" value={{ $holidayhouse->numberOfBeds }} />
                                 </div>
-                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Type</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="type_id" name="type_id" value="{{$subject->type_id}}">
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">TypeID</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="type_id" value={{ $holidayhouse->type_id }} />
                                 </div>
                             </div>
                             <div class="form-group row">

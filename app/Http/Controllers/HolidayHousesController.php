@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\HolidayHouse;
 use Illuminate\Http\Request;
@@ -36,7 +35,7 @@ class HolidayHousesController extends Controller
      */
     public function store(Request $request)
     {
-       \App\HolidayHouses::create([
+       \App\HolidayHouse::create([
           'name' => $request->get('name'),
           'location_id' => $request->get('location_id'),
           'numberOfRooms'=> $request->get('numberOfRooms'),

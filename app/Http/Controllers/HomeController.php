@@ -1,5 +1,5 @@
 <?php
-
+namespace App\HolidayHouses;
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
