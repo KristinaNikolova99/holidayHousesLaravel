@@ -50,7 +50,7 @@ class TypesController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type
+    public function show(Type $type)
     {
         //
     }
