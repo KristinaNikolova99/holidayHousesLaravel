@@ -1,7 +1,8 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 use App\HolidayHouse;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HolidayHousesController extends Controller
 {
@@ -10,6 +11,12 @@ class HolidayHousesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+    {
+        $this->middleware('is_admin');
+    }
+
+
     public function index()
     {
                  $holidayhouses = HolidayHouse::all();

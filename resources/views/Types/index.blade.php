@@ -39,7 +39,9 @@
                                        <!--<a class="btn btn-small btn-success" href="{{ URL::to('locations' . $value->id) }}">Show Location</a> -->
                                        <!-- edit this subject (uses the edit method found at GET /admin/subjects/{id}/edit -->
                                        <a class="btn btn-small btn-info" href="{{ URL::to('types' . '/' . $value->id . '/edit') }}">Edit Type</a>
-                                       <form action="{{action('TypesController@destroy', $value->id )}}" method="post">
+                                       </td>
+                                       <td>
+                                       <form action="{{action('admin\TypesController@destroy', $value->id )}}" method="post">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button class="btn btn-danger" type="submit">Delete Type</button>

@@ -23,6 +23,9 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')    
     ->name('admin');
 
-Route::resource('/holidayhouses', 'HolidayHousesController');
-Route::resource('/locations', 'LocationsController');
-Route::resource('/types', 'TypesController');
+Route::resource('/holidayhouses', 'admin\HolidayHousesController');
+Route::resource('/locations', 'admin\LocationsController');
+Route::resource('/types', 'admin\TypesController');
+Route::resource('/holidayhousesusers', 'HolidayHousesUserController');
+
+

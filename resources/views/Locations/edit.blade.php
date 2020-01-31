@@ -17,12 +17,12 @@
                         @endif
                         -->
 
-                        <form method="post" action="{{action('LocationsController@update', $location->id)}}">
+                        <form method="post" action="{{action('admin\LocationsController@update', $location->id)}}">
                             <div class="form-group row">
                                 {{csrf_field()}}
                                 <input name="_method" type="hidden" value="PATCH">
                                 <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Location</label>
-                                <div class="form-group">
+                                <div class="col-sm-10">
                                     <input type="text" class="form-control" name="location" value={{ $location->location }} />
                                 </div>
                             </div>

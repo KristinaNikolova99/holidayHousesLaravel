@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Middleware;
-
+use App\Http\Middleware;
 use Closure;
 
 class IsAdmin
@@ -18,6 +17,6 @@ class IsAdmin
         if(auth()->user()->isAdmin()) {
             return $next($request);
         }
-        return redirect('home');
+        return redirect('/');
     }
 }

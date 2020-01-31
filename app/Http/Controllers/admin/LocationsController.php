@@ -1,22 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Type;
+use App\Location;
 use Illuminate\Http\Request;
 
-class TypesController extends Controller
+use App\Http\Controllers\Controller;
+
+class LocationsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+      public function __construct()
+    {
+        $this->middleware('is_admin');
+    }
+
     public function index()
     {
-                $types = Type::all();
+                $locations = Location::all();
 
-        return view('Types.index', compact('types'));
+        return view('Locations.index', compact('locations'));
     }
 
     /**
@@ -26,7 +33,7 @@ class TypesController extends Controller
      */
     public function create()
     {
-        return view('Types.create');
+        return view('Locations.create');
     }
 
     /**
@@ -37,20 +44,20 @@ class TypesController extends Controller
      */
     public function store(Request $request)
     {
-                \App\Type::create([
-          'type' => $request->get('type'),
+                \App\Location::create([
+          'location' => $request->get('location'),
         ]);
 
-        return redirect('/types')->with('success', 'Type has been added');
+        return redirect('/locations')->with('success', 'Location has been added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Type  $type
+     * @param  \App\location  $location
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show(Location $location)
     {
         //
     }
@@ -58,48 +65,48 @@ class TypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Type  $type
+     * @param  \App\Location  $location
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-         $type = Type::find($id);
+         $location = Location::find($id);
 
-        return view('Types.edit', compact('type'));
+        return view('Locations.edit', compact('location'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Type  $type
+     * @param  \App\Location  $location
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
          $request->validate([
-        'type'=>'required',
+        'location'=>'required',
       ]);
 
-      $type = Type::find($id);
-      $type->type = $request->get('type');
+      $location = Location::find($id);
+      $location->location = $request->get('location');
 
-      $type->save();
+      $location->save();
 
-      return redirect('/types')->with('success', 'Type has been updated');
+      return redirect('/locations')->with('success', 'Location has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Type  $type
+     * @param  \App\Location  $location
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
-     $type->delete();
+        $location = Location::find($id);
+     $location->delete();
 
-     return redirect('/types')->with('success', 'Type has been deleted Successfully');
+     return redirect('/locations')->with('success', 'Location has been deleted Successfully');
     }
 }

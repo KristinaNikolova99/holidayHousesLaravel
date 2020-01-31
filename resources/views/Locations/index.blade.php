@@ -34,19 +34,15 @@
                                    <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td> -->
                                     <!--we will also add show, edit, and delete buttons -->
                                     <td>
-
-                                       <!-- show the subjects (uses the show method found at GET /admin/subjects/{id} -->
-                                       <!--<a class="btn btn-small btn-success" href="{{ URL::to('locations' . $value->id) }}">Show Location</a> -->
                                        <!-- edit this subject (uses the edit method found at GET /admin/subjects/{id}/edit -->
                                        <a class="btn btn-small btn-info" href="{{ URL::to('locations' . '/' . $value->id . '/edit') }}">Edit Location</a>
-                                       <form action="{{action('LocationsController@destroy', $value->id )}}" method="post">
+                                       </td>
+                                    <td>
+                                       <form action="{{action('admin\LocationsController@destroy', $value->id )}}" method="post">
                                             {{csrf_field()}}
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button class="btn btn-danger" type="submit">Delete Location</button>
                                         </form>
-
-                                        
-
                                     </td>
                                 </tr>
                             @endforeach
