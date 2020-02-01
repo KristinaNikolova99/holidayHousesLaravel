@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use App\HolidayHouse;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class HolidayHousesUserController extends Controller
 {
     /**
@@ -18,7 +18,12 @@ class HolidayHousesUserController extends Controller
 
     public function index()
     {
-                 $holidayhouses = HolidayHouse::all();
+                 $holidayhouses = DB::table('holiday_houses')
+            ->join('locations', 'holiday_houses.location_id', '=', 'locations.id')
+            ->join('types', 'holiday_houses.type_id', '=', 'types.id')
+            ->select('holiday_houses.*', 'locations.location', 'types.type')
+            ->get();
+         
 
         return view('HolidayHousesUsers.index',  compact('holidayhouses'));
     }
@@ -53,10 +58,14 @@ class HolidayHousesUserController extends Controller
     public function show($id)
     {
         
-         $holidayhouse = HolidayHouse::find($id);
-         
+        // $holidayhouse = HolidayHouse::find($id);
+         $details = DB::table('holiday_houses')
+            ->join('locations', 'holiday_houses.location_id', '=', 'locations.id')
+            ->join('types', 'holiday_houses.type_id', '=', 'types.id')
+            ->select('holiday_houses.*', 'locations.location', 'types.type')
+            ->get();
 
-        return view('HolidayHousesUsers.show',  compact('holidayhouse'));
+        return view('HolidayHousesUsers.show',  compact('details'));
     }
 
    

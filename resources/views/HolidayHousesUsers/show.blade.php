@@ -10,45 +10,35 @@
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages 
-                        @if (Session::has('message'))
-                            <div class="alert alert-info">{{ Session::get('message') }}</div>
-                        @endif
-                        -->
-                            <form method="post" action="{{action('HolidayHousesUserController@show', $holidayhouse->id)}}">
-                  <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered">
                             <thead>
                             <tr>
-                                <!--
-                                <td>ID</td>
-                                -->
                                 <td>Name</td>
                                 <td>Location</td>
                                 <td>Number of rooms</td>
                                 <td>Number of beds</td>
                                 <td>Type</td>
-
                             </tr>
                             </thead>
                             <tbody>
                                 
-                                <tr>
-                           
-                                    <!--
-                                    <td>{{ $holidayhouse->id }}</td>
-                                    -->
-                                    <td>{{ $holidayhouse->name }}</td>
-                                    <td>{{ $holidayhouse->location_id }}</td>
-                                    <td>{{ $holidayhouse->numberOfRooms }}</td>
-                                    <td>{{ $holidayhouse->numberOfBeds }}</td>
-                                    <td>{{ $holidayhouse->type_id }}</td>
-                                    
+                                   
+                                     <tr>
+                                     @if($details != null)
+                                       <td>{{$details->name}}
+                                       <td>{{$details->location}}</td>
+                                       <td>{{$details->numberOfRooms}}</td>
+                                       <td>{{$details->numberOfBeds}}</td>
+                                       <td>{{$details->type}}</td>
+                                       </tr>
+                                       @endif
+                                     
                                    
                        
                                 </tr>
                             
                         
-                        </form>
+                        </table>
 
                     </div>
                 </div>

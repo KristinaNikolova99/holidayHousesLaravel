@@ -4,10 +4,10 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\database",
-    "\\database\\migrations",
-    "\\routes"
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\HolidayHousesUsers"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\HomeController.php",
+  "SelectedNode": "\\resources\\views\\HolidayHousesUsers\\index.blade.php",
   "PreviewInSolutionExplorer": false
 }

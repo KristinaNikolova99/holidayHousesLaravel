@@ -90,9 +90,13 @@
                      <a href="/holidayhouses">Holiday Houses</a>
                      <a href="/locations">Locations</a>
                      <a href="/types">Types</a>
-                @endif
-                @endif
+                @else
                      <a href="/holidayhousesusers">Holiday Houses</a>
+                @endif
+                @endif
+                     <!--
+                     <a href="/holidayhousesusers">Holiday Houses</a>
+                     -->
                 </div>
             </div>
         </div>
