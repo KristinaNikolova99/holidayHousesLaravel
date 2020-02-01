@@ -48,6 +48,7 @@ class HolidayHousesController extends Controller
           'numberOfRooms'=> $request->get('numberOfRooms'),
           'numberOfBeds' => $request->get('numberOfBeds'),
           'type_id' => $request->get('type_id'),
+          'image_id' => $request->get('image_id'),
         ]);
 
         return redirect('/holidayhouses')->with('success', 'Holiday house has been added');

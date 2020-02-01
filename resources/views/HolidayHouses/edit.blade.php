@@ -41,6 +41,10 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="type_id" value={{ $holidayhouse->type_id }} />
                                 </div>
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">ImageID</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="image_id" value={{ $holidayhouse->image_id }} />
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-2"></div>

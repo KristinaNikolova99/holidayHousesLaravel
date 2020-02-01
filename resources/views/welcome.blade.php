@@ -6,6 +6,7 @@
 
         <title>Holiday Houses</title>
 
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -84,6 +85,52 @@
                     Holiday Houses
                 </div>
 
+
+               <form action="/search" method="POST" role="search">
+                   {{ csrf_field() }}
+                    <div class="input-group">
+                         <input type="text" class="form-control" name="q"
+                              placeholder="Search holiday houses"> <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </span>
+                    </div>
+                </form>
+
+
+                 <div class="container">
+                 @if(isset($details))
+                     <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+                     <h2>Sample User details</h2>
+                     <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Location</td>
+                                <td>Type</td>
+                                <td>Number of rooms</td>
+                                <td>Number of beds</td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($details as $holidayhouse)
+                                <tr>
+                                    <td>{{ $holidayhouse->name }}</td>
+                                    <td>{{ $holidayhouse->location_id }}</td>
+                                    <td>{{ $holidayhouse->type_id}}</td>
+                                    <td>{{ $holidayhouse->numberOfRooms}}</td>
+                                    <td>{{ $holidayhouse->numberOfBeds}}</td>
+                                </tr>
+                            @endforeach
+                            
+                            </tbody>
+                        </table>
+    @endif
+</div>
+
+                </br>
                 <div class="links">
                 @if (auth()->check())
                 @if(auth()->user()->isAdmin())

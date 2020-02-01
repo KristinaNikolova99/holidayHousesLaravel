@@ -27,6 +27,9 @@ class CreateHolidayHousesTable extends Migration
             $table->unsignedBigInteger('type_id');
             $table->foreign('type_id')
                 ->references('id')->on('Types');
+            $table->unsignedBigInteger('image_id');
+            $table->foreign('image_id')
+                ->references('id')->on('Images');
             $table->timestamps();
         });
     }

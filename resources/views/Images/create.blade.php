@@ -6,22 +6,28 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Create Type
-                        <a href="{{ URL::to('types') }}" class="pull-right">List all</a>
+                        Add Image
+                        <a href="{{ URL::to('images') }}" class="pull-right">List all</a>
                     </div>
 
                     <div class="panel-body">
+                        <!-- will be used to show any messages -->
                         @if (Session::has('message'))
                             <div class="alert alert-info">{{ Session::get('message') }}</div>
                         @endif
 
-                        
-                        <form method="post" action="{{url('types')}}">
+                        <form method="post" action="{{url('images')}}" enctype="multipart/form-data">
                             <div class="form-group row">
                                 {{csrf_field()}}
-                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">type</label>
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Image Description</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="type" name="type">
+                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="imageDescription" name="imageDescription">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="customImage" class="col-sm-2 col-form-label col-form-label-lg">Image</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control form-control-lg" id="customImage" placeholder="customImage" name="customImage">
                                 </div>
                             </div>
                             <div class="form-group row">

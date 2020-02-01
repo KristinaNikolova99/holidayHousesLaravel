@@ -25,6 +25,7 @@
                                 <td>Number of rooms</td>
                                 <td>Number of beds</td>
                                 <td>TypeID</td>
+                                <td>ImageID</td>
 
                             </tr>
                             </thead>
@@ -37,6 +38,7 @@
                                     <td>{{ $value->numberOfRooms }}</td>
                                     <td>{{ $value->numberOfBeds }}</td>
                                     <td>{{ $value->type_id }}</td>
+                                    <td>{{ $value->image_id }}</td>
 
                                    <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td>
                                     <!-- we will also add show, edit, and delete buttons -->

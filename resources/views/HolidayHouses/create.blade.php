@@ -41,6 +41,10 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="type_id" name="type_id">
                                 </div>
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Image</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="image_id" name="image_id">
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-2"></div>
