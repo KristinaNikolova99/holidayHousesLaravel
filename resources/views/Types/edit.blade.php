@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Edit Type
-                        <a href="{{ URL::to('types') }}" class="pull-right">List all</a>
+                        <a href="{{ URL::to('types') }}" class="btn btn-primary">List all</a></br></br>
+                        <h1 style="font-size = 40px">Edit Type</h1>
                     </div>
 
                     <div class="panel-body">

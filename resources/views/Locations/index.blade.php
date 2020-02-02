@@ -6,12 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Locations
-                        <a href="{{ URL::to('locations/create') }}" class="pull-right">Add Location</a>
+                        <a href="{{ URL::to('locations/create') }}" class="btn btn-primary">Add Location</a></br></br>
+                        <h1 style="font-size = 40px">Locations</h1>
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages -->
                         @if (\Session::has('success'))
                             <div class="alert alert-info">{{\Session::get('success') }}</div>
                         @endif
@@ -32,9 +31,7 @@
                                     <td>{{ $value->location }}</td>
 
                                    <!-- <td><img src="<?php echo asset('imagecache/small/' . $value->sampleName);?>" alt="image" /></td> -->
-                                    <!--we will also add show, edit, and delete buttons -->
                                     <td>
-                                       <!-- edit this subject (uses the edit method found at GET /admin/subjects/{id}/edit -->
                                        <a class="btn btn-small btn-info" href="{{ URL::to('locations' . '/' . $value->id . '/edit') }}">Edit Location</a>
                                        </td>
                                     <td>

@@ -6,17 +6,12 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Edit Holiday House
-                        <a href="{{ URL::to('holidayhouses') }}" class="pull-right">List all</a>
+                        <a href="{{ URL::to('holidayhouses') }}" class="btn btn-primary">List all</a></br></br>
+                        <h1 style="font-size = 40px">Edit Holiday House</h1>
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages 
-                        @if (Session::has('message'))
-                            <div class="alert alert-info">{{ Session::get('message') }}</div>
-                        @endif
-                        -->
-
+                        
                         <form method="post" action="{{action('admin\HolidayHousesController@update', $holidayhouse->id)}}">
                             <div class="form-group row">
                                 {{csrf_field()}}

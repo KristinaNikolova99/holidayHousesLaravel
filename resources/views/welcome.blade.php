@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Holiday Houses</title>
+        <title style>Holiday Houses</title>
 
 
         <!-- Fonts -->
@@ -101,8 +101,7 @@
 
                  <div class="container">
                  @if(isset($details))
-                     <p> The Search results for your query <b> {{ $query }} </b> are :</p>
-                     <h2>Sample User details</h2>
+                     <p style="font-size:25px"> The Search results for your query <b> {{ $query }} </b> are :</p>
                      <table class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -137,6 +136,7 @@
                      <a href="/holidayhouses">Holiday Houses</a>
                      <a href="/locations">Locations</a>
                      <a href="/types">Types</a>
+                     <a href="/images">Images</a>
                 @else
                      <a href="/holidayhousesusers">Holiday Houses</a>
                 @endif

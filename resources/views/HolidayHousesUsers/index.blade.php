@@ -35,11 +35,12 @@
                                        <td>{{$detail->type}}</td>
                                        <td>{{$detail->numberOfRooms}}</td>
                                        <td>{{$detail->numberOfBeds}}</td>
-                                       <td>{{$detail->numberOfBeds}}</td>
                                        <td><img src="<?php echo asset('imagecache/small/' . $detail->name);?>" alt="image" /></td>
+                                       <!--
                                        <td>
-                                       <a class="btn btn-small btn-success" href="{{ URL::to('holidayhousesusers' . '/' . $detail->id ) }}">Show House</a>
+                                           <a class="btn btn-small btn-success" href="{{ URL::to('holidayhousesusers' . '/' . $detail->id ) }}">Show House</a>
                                        </td>
+                                       -->
                                    </tr>
                                        
                                     @endforeach

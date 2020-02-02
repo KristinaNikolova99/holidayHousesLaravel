@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Edit Location
-                        <a href="{{ URL::to('locations') }}" class="pull-right">List all</a>
+                        <a href="{{ URL::to('locations') }}" class="btn btn-primary">List all</a></br></br>
+                        <h1 style="font-size = 40px">Edit Location</h1>
                     </div>
 
                     <div class="panel-body">

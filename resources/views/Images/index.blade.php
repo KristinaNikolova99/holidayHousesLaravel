@@ -6,12 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Images
-                        <a href="{{ URL::to('images/create') }}" class="pull-right">Add Image</a>
+                        <a href="{{ URL::to('images/create') }}" class="btn btn-primary">Add Image</a></br></br>
+                        <h1 style="font-size = 40px">Images</h1>
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages -->
                         @if (\Session::has('success'))
                             <div class="alert alert-info">{{\Session::get('success') }}</div>
                         @endif
@@ -22,7 +21,6 @@
                                 <td>ID</td>
                                 <td>Description</td>
                                 <td>Image</td>
-                                <!-- <td>Actions</td> -->
                             </tr>
                             </thead>
                             <tbody>

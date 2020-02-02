@@ -7,28 +7,37 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Create Location
-                        <a href="{{ URL::to('locations') }}" class="pull-right">List all</a>
+                        <a href="{{ URL::to('locations') }}" class="btn btn-primary">List all</a></a></br></br>
+                        <h1 style="font-size = 40px">Create Location</h1>
                     </div>
 
                     <div class="panel-body">
-                        <!-- will be used to show any messages -->
                         @if (Session::has('message'))
                             <div class="alert alert-info">{{ Session::get('message') }}</div>
                         @endif
 
+                        @if ($errors->any())
+                       <div class="alert alert-danger">
+                       <ul>
+                       @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                       @endforeach
+                        </ul>
+                             </div>
+                        @endif
                         
                         <form method="post" action="{{url('locations')}}">
                             <div class="form-group row">
                                 {{csrf_field()}}
-                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">location</label>
+                                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Location: </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="location" name="location">
                                 </div>
+                                
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-2"></div>
-                                <input type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
 
