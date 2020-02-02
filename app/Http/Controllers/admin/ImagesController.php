@@ -47,13 +47,15 @@ class ImagesController extends Controller
 
    public function store(ImageUpload $request)
     {
-        $path = $request->file('customImage')->store('public/sample-images');
-
+        //$path = Storage::disk('local')->put($request->file('customImage')->getClientOriginalName(),$request->file('customImage')->get());
+        $path = $request->file('customImage')->store('/public/sample-images');
+        
         $image = new Image([
             'fileName' => basename($path),
             'imageDescription' => $request->get('imageDescription')
         ]);
         $image->save();
+
 
         return redirect('images');
 

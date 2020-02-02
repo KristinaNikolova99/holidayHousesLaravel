@@ -6,7 +6,7 @@ use App\Location;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\Locations;
 class LocationsController extends Controller
 {
     /**
@@ -42,7 +42,7 @@ class LocationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Locations $request)
     {
                 \App\Location::create([
           'location' => $request->get('location'),

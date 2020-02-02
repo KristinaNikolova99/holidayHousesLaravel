@@ -3,7 +3,7 @@ namespace App\Http\Controllers\admin;
 use App\HolidayHouse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\HolidayHouses;
 class HolidayHousesController extends Controller
 {
     /**
@@ -40,7 +40,7 @@ class HolidayHousesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HolidayHouses $request)
     {
        \App\HolidayHouse::create([
           'name' => $request->get('name'),

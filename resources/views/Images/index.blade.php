@@ -20,7 +20,7 @@
                             <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Name</td>
+                                <td>Description</td>
                                 <td>Image</td>
                                 <!-- <td>Actions</td> -->
                             </tr>
@@ -31,7 +31,7 @@
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->imageDescription }}</td>
                                     <td><img src="<?php echo asset('imagecache/small/' . $value->fileName);?>" alt="image" /></td>
-                                    <!-- we will also add show, edit, and delete buttons -->
+   
                                     <td>
 
                                         <form action="{{action('admin\ImagesController@destroy', $value->id )}}" method="post">

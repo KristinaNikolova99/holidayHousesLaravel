@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\Types;
 class TypesController extends Controller
 {
     /**
@@ -42,7 +42,7 @@ class TypesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Types $request)
     {
                 \App\Type::create([
           'type' => $request->get('type'),
